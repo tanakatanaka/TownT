@@ -25,3 +25,7 @@ void ABuildingActor::Tick(float DeltaTime)
 
 }
 
+UCameraComponent* ABuildingActor::GetMyCamera_Implementation() const
+{
+	return NULL;
+}
