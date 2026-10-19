@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "PlayerCameraPawn.h"
+#include "BuildingManager.h"
 #include "TownManager.generated.h"
 
 UCLASS()
@@ -15,12 +17,10 @@ public:
 	// Sets default values for this actor's properties
 	ATownManager();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+protected:	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings", meta = (AllowPrivateAccess = "true"))
+	ABuildingManager* buildingManager;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings", meta = (AllowPrivateAccess = "true"))
+	APlayerCameraPawn* playerCamera;
 };
